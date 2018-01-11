@@ -6,6 +6,7 @@ require 'sinatra'
 # set :views, settings.root + "views"
 
 get '/' do
+    @page_title = "Welcome to Explore California"
     erb :index
 end
 
