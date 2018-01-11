@@ -6,6 +6,10 @@ require 'sinatra'
 # set :views, settings.root + "views"
 
 get '/' do
-    filepath = File.join(settings.public_folder, 'index.html')
-    send_file(filepath)
+    erb :index
+end
+
+get '/test' do
+    template = "The current year is <%= Time.now.year %>."
+    erb template
 end
