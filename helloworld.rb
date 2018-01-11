@@ -24,6 +24,11 @@ post '/form' do
      "Thank you for submitting the form."
 end
 
+get '/about' do 
+    redirect('/company/about')
+end
+
+
 get '/company/about' do
     output = "<h2>Sinatra</h2>"
     output << "<p>This is my first Sinatra app.</p>"
