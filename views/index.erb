@@ -97,13 +97,24 @@
       <div id="pageFooter">
         <div id="quickLinks">
           <h1>Quick Nav</h1>
+
+<%
+quick_nav = [
+    ['Home', '/', 'Our home page'],
+    ['Tours', '/tours.html', 'Explore our tours'],
+    ['Mission', '/mission.html', 'What we think'],
+    ['Resources', '/resources.html', 'Guidance and planning'],
+    ['Explorers', '/explorers.html', 'Join our community'],
+    ['Contact', '/contact', 'Contact and support']
+]
+%>
+
           <ul id="quickNav">
-            <li><a href="index.html" title="Our home page">Home</a></li>
-            <li><a href="tours.html" title="Explore our tours">Tours</a></li>
-            <li><a href="mission.html" title="What we think">Mission</a></li>
-            <li><a href="resources.html" title="Guidance and planning">Resources</a></li>
-            <li><a href="explorers.html" title="Join our community">Explorers</a></li>
-            <li><a href="contact.html" title="Contact and support">Contact</a></li>
+          <% quick_nav.each do |item| %>
+            <li>
+                <a href="<%= item[1] %>" title="<%= item[2] %>"><%= item[0] %></a>
+            </li>
+          <% end %>
           </ul>
         </div>
         <div id="footerResources">
