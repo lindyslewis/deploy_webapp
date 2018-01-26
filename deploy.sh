@@ -1,4 +1,7 @@
 #!/bin/bash
+
+export PATH="/var/jenkins_home/.local/bin/:$PATH"
+
 echo 'hello from deploy.sh'
 
 stack_name="$1"

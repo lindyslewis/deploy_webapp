@@ -10,7 +10,7 @@
           "InstanceType" : "t2.micro",
           "KeyName" : "LabEC2KeyPair",
           "SecurityGroups" : [ "sg-f7311682" ],
-        "UserData"       : { "Fn::Base64" : { "Fn::Join" : ["", [
+          "UserData"       : { "Fn::Base64" : { "Fn::Join" : ["", [
              "#!/bin/bash -xe\n",
              "yum update -y\n",
              "yum install -y httpd\n",
@@ -24,7 +24,7 @@
        "Properties" : {
           "DesiredCapacity" : "1",
           "HealthCheckType" : "EC2",
-          "LaunchConfigurationName" :{ "Ref" : "MyLaunchConfig" }, 
+          "LaunchConfigurationName" :{ "Ref" : "MyLaunchConfig" },
           "MaxSize" : "1",
           "MinSize" : "1",
           "VPCZoneIdentifier" : ["subnet-f25ce8dd"]
@@ -32,6 +32,3 @@
     }
     }
   }
-
-
-
