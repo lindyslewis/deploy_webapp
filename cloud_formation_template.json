@@ -1,0 +1,37 @@
+{
+  "AWSTemplateFormatVersion" : "2010-09-09",
+  "Description" : "A sample template",
+  "Resources" : {
+    "MyLaunchConfig" :{
+       "Type" : "AWS::AutoScaling::LaunchConfiguration",
+       "Properties" : {
+          "AssociatePublicIpAddress" : "true",
+          "ImageId" : "ami-55ef662f",
+          "InstanceType" : "t2.micro",
+          "KeyName" : "LabEC2KeyPair",
+          "SecurityGroups" : [ "sg-f7311682" ],
+        "UserData"       : { "Fn::Base64" : { "Fn::Join" : ["", [
+             "#!/bin/bash -xe\n",
+             "yum update -y\n",
+             "yum install -y httpd\n",
+             "service httpd start"
+		]]}}
+      }
+    },
+
+    "MyASG" : {
+       "Type" : "AWS::AutoScaling::AutoScalingGroup",
+       "Properties" : {
+          "DesiredCapacity" : "1",
+          "HealthCheckType" : "EC2",
+          "LaunchConfigurationName" :{ "Ref" : "MyLaunchConfig" }, 
+          "MaxSize" : "1",
+          "MinSize" : "1",
+          "VPCZoneIdentifier" : ["subnet-f25ce8dd"]
+       }
+    }
+    }
+  }
+
+
+
