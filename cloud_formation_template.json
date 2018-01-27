@@ -13,12 +13,12 @@
           "UserData"       : { "Fn::Base64" : { "Fn::Join" : ["", [
              "#!/bin/bash -xe\n",
              "yum update -y\n",
-             "yum install -y git",
-             "git clone https://github.com/lindyslewis/RubySinatraTraining.git /home/ec2-user/rubyApp",
-             "curl -L https://get.rvm.io | bash -s stable --ruby=2.0.0",
-             "source ~/.rvm/scripts/rvm",
-             "gem install sinatra",
-             "ruby /home/ec2-user/rubyApp/app.rb >> /home/ec2-user/rubyApp/rubyApp.log"
+             "yum install -y git\n",
+             "git clone https://github.com/lindyslewis/RubySinatraTraining.git /home/ec2-user/rubyApp\n",
+             "curl -L https://get.rvm.io | bash -s stable --ruby=2.0.0\n",
+             "source ~/.rvm/scripts/rvm\n",
+             "gem install sinatra\n",
+             "ruby /home/ec2-user/rubyApp/app.rb >> /home/ec2-user/rubyApp/rubyApp.log\n"
 		]]}}
       }
     },
