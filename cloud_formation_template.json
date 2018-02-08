@@ -30,7 +30,7 @@
     "MyElasticLoadBalancer":{
         "Type" : "AWS::ElasticLoadBalancing::LoadBalancer",
         "Properties" : {
-           "AvailabilityZones" : { "Fn::GetAZs" : "" },
+           "Subnets": "subnet-f25ce8dd",
            "Listeners" : [ {
                 "LoadBalancerPort" : "80",
                 "InstancePort" : "80",
