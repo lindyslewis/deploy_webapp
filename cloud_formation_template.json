@@ -26,16 +26,31 @@
       }
     },
 
-    "MyASG" : {
-       "Type" : "AWS::AutoScaling::AutoScalingGroup",
-       "Properties" : {
-          "DesiredCapacity" : "1",
-          "HealthCheckType" : "EC2",
-          "LaunchConfigurationName" :{ "Ref" : "MyLaunchConfig" },
-          "MaxSize" : "1",
-          "MinSize" : "1",
-          "VPCZoneIdentifier" : ["subnet-f25ce8dd"]
-       }
-    }
-    }
+  
+    "MyElasticLoadBalancer":{
+        "Type" : "AWS::ElasticLoadBlancing::LoadBalancer",
+        "Properties" : {
+           "Listeners" : [ {
+                "LoadBalancerPort" : "80",
+                "InstancePort" : { "Ref" : "WebServerPort" },
+                "Protocol" : "HTTP"
+
+           }]
+        }
+
+     },
+
+     "MyASG" : {
+        "Type" : "AWS::AutoScaling::AutoScalingGroup",
+        "Properties" : {
+           "DesiredCapacity" : "2",
+           "HealthCheckType" : "EC2",
+           "LaunchConfigurationName" :{ "Ref" : "MyLaunchConfig" },
+           "MaxSize" : "2",
+           "MinSize" : "2",
+           "LoadBalancerNames" : [ { "Ref" : "MyElasticLoadBalancer" } ] ,
+           "VPCZoneIdentifier" : ["subnet-f25ce8dd"]
+        }
+     }
   }
+}
