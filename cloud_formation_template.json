@@ -52,7 +52,7 @@
            "LoadBalancerNames" : [ { "Ref" : "MyElasticLoadBalancer" } ] ,
            "VPCZoneIdentifier" : ["subnet-f25ce8dd"]
         }
-     }
+     },
        
      "Outputs" : {
         "URL" : {
