@@ -1,4 +1,4 @@
-i{
+{
   "AWSTemplateFormatVersion" : "2010-09-09",
   "Description" : "Sinatra Webapp with ASG and ELB",
   "Resources" : {
