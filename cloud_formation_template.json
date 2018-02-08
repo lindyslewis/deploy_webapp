@@ -28,7 +28,7 @@
 
   
     "MyElasticLoadBalancer":{
-        "Type" : "AWS::ElasticLoadBlancing::LoadBalancer",
+        "Type" : "AWS::ElasticLoadBalancing::LoadBalancer",
         "Properties" : {
            "Listeners" : [ {
                 "LoadBalancerPort" : "80",
