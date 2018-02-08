@@ -1,6 +1,6 @@
 {
   "AWSTemplateFormatVersion" : "2010-09-09",
-  "Description" : "A sample template",
+  "Description" : "Sinatra Webapp with ASG and ELB",
   "Resources" : {
     "MyLaunchConfig" :{
        "Type" : "AWS::AutoScaling::LaunchConfiguration",
@@ -32,7 +32,7 @@
         "Properties" : {
            "Listeners" : [ {
                 "LoadBalancerPort" : "80",
-                "InstancePort" : { "Ref" : "WebServerPort" },
+                "InstancePort" : "80",
                 "Protocol" : "HTTP"
 
            }]
