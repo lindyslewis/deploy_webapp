@@ -52,14 +52,15 @@
            "LoadBalancerNames" : [ { "Ref" : "MyElasticLoadBalancer" } ] ,
            "VPCZoneIdentifier" : ["subnet-f25ce8dd"]
         }
-     },
+     }
+},
        
-     "Outputs" : {
-        "URL" : {
-            "Description" : "The URL of the Website",  
-            "Value" : { "Fn::Join" : [ "", [ "http://", { "Fn::GetAtt": [ "MyElasticLoadBalancer", "DNSName"]}]]}
-        }
+  "Outputs" : {
+    "URL" : {
+      "Description" : "The URL of the Website",  
+      "Value" : { "Fn::Join" : [ "", [ "http://", { "Fn::GetAtt": [ "MyElasticLoadBalancer", "DNSName"]}]]}
+    }
   }
-}
+
 
 }
