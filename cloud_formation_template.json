@@ -1,4 +1,4 @@
-{
+i{
   "AWSTemplateFormatVersion" : "2010-09-09",
   "Description" : "Sinatra Webapp with ASG and ELB",
   "Resources" : {
@@ -33,7 +33,7 @@
            "Subnets": ["subnet-f25ce8dd"],
            "Listeners" : [ {
                 "LoadBalancerPort" : "80",
-                "InstancePort" : "80",
+                "InstancePort" : "4567",
                 "Protocol" : "HTTP"
 
            }]
