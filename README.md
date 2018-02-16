@@ -9,11 +9,11 @@
 
  - LaunchConfig with UserData
 
- - UserData installs git
- - UserData clones this repo
- - UserData downloads and installs rvm
- - UserData installs Sinatra gem
- - USerData logs app.rb to rubyApp.log
+  - UserData installs git
+  - UserData clones this repo
+  - UserData downloads and installs rvm
+  - UserData installs Sinatra gem
+  - UserData logs app.rb to rubyApp.log
 
  - ElasticLoadBalancer with instance port listening at 4567
 
